@@ -1,17 +1,17 @@
-import { InputType, Field } from '@nestjs/graphql';
+/* eslint-disable prettier/prettier */
 
-@InputType()
-export class CreateUserInput {
-  // Fields we want to save in our database
+import { Field, InputType } from '@nestjs/graphql';
 
-  // @Field(() => Int)
-  // id: number;
-
+@InputType() //it's an InputType because it's going to be an input for our login query
+export class SignupUserInput {
   @Field()
   username: string;
 
   @Field()
   password: string;
+
+  @Field()
+  confirmPassword: string;
 
   @Field(() => [String])
   courses: [string, string, string];
